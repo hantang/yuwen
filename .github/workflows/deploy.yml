@@ -26,19 +26,18 @@ jobs:
 
     env:
       USER: ${{ github.repository_owner }}
+      DATA_BRANCH: docs
       SRC_NAME: resources
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: docs
 
-      # 拉取数据
+      # 从分支拉取数据
       - name: Checkout data
         uses: actions/checkout@v4
         with:
           repository: ${{ github.repository }}
-          ref: main
+          ref: ${{ env.DATA_BRANCH }}
           path: ${{ env.SRC_NAME }}
 
       - uses: actions/setup-python@v5
