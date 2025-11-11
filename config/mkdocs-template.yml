@@ -65,6 +65,7 @@ plugins:
       separator: '[\s\-,:!=\[\]()"/\u200b]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
   - meta
   - mkdocs-embed-pdf
+  - callouts
   - minify:
       minify_html: true
 
@@ -72,6 +73,7 @@ markdown_extensions:
   - admonition
   - attr_list
   - footnotes
+  - nl2br
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.tabbed:
