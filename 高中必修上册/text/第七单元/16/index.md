@@ -1,6 +1,6 @@
 ---
 title: "古文游记二篇"
-author: ""
+author: "苏轼、姚鼐"
 unit: "7-3"
 index: 16
 page: "118-122"

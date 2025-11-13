@@ -1,6 +1,6 @@
 ---
 title: "随笔二篇"
-author: ""
+author: "黑塞、王佐良"
 unit: "6-3"
 index: 13
 page: "97-102"

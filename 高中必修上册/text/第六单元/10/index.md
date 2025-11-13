@@ -1,6 +1,6 @@
 ---
 title: "古文两篇"
-author: ""
+author: "《荀子》、韩愈"
 unit: "6-1"
 index: 10
 page: "84-87"

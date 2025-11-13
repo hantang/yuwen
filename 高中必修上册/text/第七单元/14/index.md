@@ -1,6 +1,6 @@
 ---
 title: "散文二篇"
-author: ""
+author: "郁达夫、朱自清"
 unit: "7-1"
 index: 14
 page: "106-111"

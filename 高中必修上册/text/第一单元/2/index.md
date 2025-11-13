@@ -1,6 +1,6 @@
 ---
 title: "诗作四首"
-author: ""
+author: "郭沫若、闻一多、昌耀、雪莱"
 unit: "1-2"
 index: 2
 page: "4-11"

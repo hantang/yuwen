@@ -1,6 +1,6 @@
 ---
 title: "散文诗二首"
-author: ""
+author: "泰戈尔、冰心"
 unit: "2-3"
 index: 7
 page: "30-33"

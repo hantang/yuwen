@@ -1,6 +1,6 @@
 ---
 title: "古诗二首"
-author: ""
+author: "《诗经》、杨万里"
 unit: "2-3"
 index: 6
 page: "53-54"

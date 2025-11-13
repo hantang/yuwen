@@ -1,6 +1,6 @@
 ---
 title: "新闻通讯三篇"
-author: ""
+author: "沈英甲、林为民、叶雨婷"
 unit: "2-1"
 index: 4
 page: "32-50"

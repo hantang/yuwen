@@ -1,6 +1,6 @@
 ---
 title: "唐诗三首"
-author: ""
+author: "李白、杜甫、白居易"
 unit: "3-2"
 index: 8
 page: "60-64"

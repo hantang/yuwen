@@ -1,6 +1,6 @@
 ---
 title: "小说二篇"
-author: ""
+author: "茹志鹃、铁凝"
 unit: "1-3"
 index: 3
 page: "12-28"

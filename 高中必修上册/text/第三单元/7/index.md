@@ -1,6 +1,6 @@
 ---
 title: "魏晋诗二首"
-author: ""
+author: "曹操、陶渊明"
 unit: "3-1"
 index: 7
 page: "58-59"

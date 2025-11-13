@@ -1,6 +1,6 @@
 ---
 title: "宋词三首"
-author: ""
+author: "苏轼、辛弃疾、李清照"
 unit: "3-3"
 index: 9
 page: "65-68"

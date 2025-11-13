@@ -1,6 +1,6 @@
 ---
 title: "外国诗二首"
-author: ""
+author: "普希金、弗罗斯特"
 unit: "5-3"
 index: 20
 page: "130-132"
