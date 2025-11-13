@@ -1,5 +1,5 @@
 ---
-title: "外国诗二首"
+title: "※ 外国诗二首"
 author: "普希金、弗罗斯特"
 unit: "5-3"
 index: 20
