@@ -3,7 +3,7 @@
   // [\u4e00-\u9fff\u3000-\u303f\uff00-\uffef“”‘’]
   const chineseChars = "[\\p{Script=Han}\\u3000-\\u303F\\uFE10–\\uFE1F\\uFF00-\\uFFEF“”‘’…•·]";
   const regex = new RegExp(
-    `(?<=${chineseChars})\\s+(?=${chineseChars})|^\\s+|\\s+$`,
+    `(?<=${chineseChars})[ \\t]+(?=${chineseChars})|^[ \\t]+|[ \\t]+$`,
     "gu"
   );
 

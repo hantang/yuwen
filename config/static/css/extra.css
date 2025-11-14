@@ -90,9 +90,15 @@ h6 {
   text-indent: 0;
 }
 
-.heti > div p > strong {
+.heti > div p > strong,
+.heti > div li > strong {
   color: unset;
   font-family: var(--kai-font);
+}
+
+.heti li em {
+  font-family: var(--fang-font);
+  font-size: smaller;
 }
 
 /* 第一个段落，可能是标题 */

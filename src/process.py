@@ -120,7 +120,7 @@ def _indent_text(text: str, indent: int) -> str:
     return out
 
 
-def create_md_tip(yaml_data, indent=4):
+def create_md_tip(yaml_data, indent=4, expand=False):
     """使用admonition/call-out展示【预习】"""
     yaml_key = None
     for key in ["desc", "tip"]:
@@ -146,8 +146,8 @@ def create_md_tip(yaml_data, indent=4):
         if not tag:
             tag = "学习提示"
         tag_type = "tip"
-
-    out = f'??? {tag_type} "{tag}"\n\n{desc_text}'
+    expand_tag = "!!!" if expand else "???"
+    out = f'{expand_tag} {tag_type} "{tag}"\n\n{desc_text}'
     return dedent(out), yaml_key
 
 
@@ -189,10 +189,10 @@ def _get_icon(index: int, level: int = 0) -> str:
     return icon
 
 
+
 def update_index_text(text_file: Path):
     """
     unit/index.md 增加换行符，避免第一个段落被css影响
-
     """
     dir_name = text_file.parent.name
     index, level = get_index_level(dir_name)
@@ -202,11 +202,17 @@ def update_index_text(text_file: Path):
     meta, md_text = extract_front_matter(text)
     meta["icon"] = icon
 
+    desc = ""
+    desc, key = create_md_tip(meta, expand=True)
+    if desc and key:
+        del meta[key]
+        if desc:
+            desc = f"\n{desc}\n"
+
     if re.findall(r"^\S+\n\S|^\S{40,}", md_text.strip()):  # 开头是段落或者太长的行（可能非标题）
         md_text = f"\n___\n\n{md_text}"
     fm = create_front_matter(meta)
-    text = "\n".join([fm, md_text])
-
+    text = "\n".join([fm, desc, md_text])
     return text
 
 
