@@ -379,23 +379,25 @@ def get_index_level(name):
         result = re.findall(rf"第([{nums}])单元", name)
         unit = nums.index(result[0]) + 1 if result else 99
         return unit, 0
+    if "古诗词诵读" in name:
+        return 99, 0
+    if "册" in name:
+        grade = 99
+        if "选择性必修" in name:
+            grade = 11
+        elif "必修" in name:
+            grade = 10
+        else:
+            if result := re.findall(rf"([{nums}])年级", name):
+                grade = nums.index(result[0]) + 1
 
-    grade = 99
-    if "选择性必修" in name:
-        grade = 11
-    elif "必修" in name:
-        grade = 10
-    else:
-        if result := re.findall(rf"([{nums}])年级", name):
-            grade = nums.index(result[0]) + 1
-
-    result = re.findall(rf"年级([{group}])册|[初高]中.*([{group}])", name)
-    result2 = [v[0] for v in result if v]
-    level = 0
-    if result2:
-        level = group.index(result2[0]) + 1
-    return grade, level
-
+        result = re.findall(rf"年级([{group}])册|[初高]中.*([{group}])", name)
+        result2 = [max(v) for v in result if v]
+        level = 0
+        if result2:
+            level = group.index(result2[0]) + 1
+        return grade, level
+    return 0, 0
 
 def get_unit_index(unit_name):
     nums = "一二三四五六七八九"
@@ -565,7 +567,7 @@ def create_docs(resource_dir: str, docs_dir: str):
                 else:
                     page = "999"
                 order = f"{order}_{page}_{level}"
-                if index.isdigit() and int(index) < 99:
+                if index.isdigit() and 0 < int(index) < 99:
                     title = f"{int(index):02d} {title}"
 
             nav_dict[save_file.relative_to(docs_dir).as_posix()] = (order, title)
