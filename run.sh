@@ -47,7 +47,6 @@ cp -r extra/* "$DOCS_PATH"/
 
 python src/postprocess.py --docs "$DOCS_PATH"
 
-
 if [[ "$STEP_DEP" == true ]]; then
     pip install .
 fi

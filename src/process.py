@@ -515,6 +515,7 @@ def create_docs(resource_dir: str, docs_dir: str):
         if book_name.startswith("."):
             continue
 
+        toc_file = Path(dir_path, TOC_NAME)
         text_dir = Path(dir_path, TEXT_DIR)
         raw_dir = Path(dir_path, RAW_DIR)
         text_files = sorted(text_dir.rglob("*.md"))
@@ -525,12 +526,12 @@ def create_docs(resource_dir: str, docs_dir: str):
 
         logging.info(f"正在处理 {book_name}, 文件共 {len(text_files)}")
 
-        if len(text_files) == 0:
+        if not toc_file.exists():
+            logging.warning(f"忽略无TOC目录 = {dir_path}")
             continue
         raw_dict = get_file_dict(raw_dir, book_name)
 
         # 创建index.md
-        toc_file = Path(dir_path, TOC_NAME)
         idx_file = Path(dir_path, "index.md")
         save_file = Path(save_dir, "index.md")
         text = create_book_text(book_name, idx_file, toc_file)
@@ -544,7 +545,7 @@ def create_docs(resource_dir: str, docs_dir: str):
             file_path = file.relative_to(text_dir)
             unit_name = file_path.parts[0]
             key = (book_name, unit_name, file_path.stem)
-            logging.info(f"Process = {key}")
+            logging.debug(f"Process = {key}")
 
             if file_path.as_posix() == "index.md":
                 continue
@@ -591,6 +592,19 @@ def create_docs(resource_dir: str, docs_dir: str):
                     save_diff_file = Path(save_dir, "改动.md")  # 修改统计
                     save_text(save_diff_file, diff_text)
                     nav_dict[save_diff_file.relative_to(docs_dir).as_posix()] = (order + "z", title)
+
+                images = []
+                raw_image_dir = Path(raw_file.parent, "images")
+                for suffix in ['jpg', 'jpeg', 'png']:
+                    images += sorted(raw_image_dir.glob(f"{raw_file.stem}-*.{suffix}"))
+                if images:
+                    logging.info(f"图片({raw_file}) = {len(images)}")
+                    save_image_dir = Path(save_dir, "images")
+                    if not save_image_dir.exists():
+                        save_image_dir.mkdir(parents=True)
+                    for image_file in images:
+                        save_image_file = Path(save_image_dir, image_file.name)
+                        shutil.copy(image_file, save_image_file)
 
 
     # update index.md
