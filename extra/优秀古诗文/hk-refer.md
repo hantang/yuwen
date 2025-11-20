@@ -1,6 +1,6 @@
 # 香港中學中國語文學習參考篇章（文言）
 
-來自 https://www.edb.gov.hk/tc/curriculum-development/kla/chi-edu/resources/secondary-edu/lang/modules.html
+來自 [:material-link: 中學中國語文課程學與教資源](https://www.edb.gov.hk/tc/curriculum-development/kla/chi-edu/resources/secondary-edu/lang/modules.html)
 
 ## 初中
 

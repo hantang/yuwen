@@ -1,6 +1,6 @@
 # 香港建議篇章篇目
 
-- [中國語文課程 – 建議篇章](https://www.edb.gov.hk/tc/curriculum-development/kla/chi-edu/recommended-passages.html)
+- [:material-link: 中國語文課程 – 建議篇章](https://www.edb.gov.hk/tc/curriculum-development/kla/chi-edu/recommended-passages.html)
 
 ![](images/香港建議篇章.png)
 
