@@ -1,13 +1,13 @@
 # Site information
 site_name: "语文探源"
-site_url: https://hantang.github.io/cntextbook/
+site_url: https://hantang.github.io/yuwen/
 site_author: hantang
 site_description: "Chinese textbooks"
 copyright: Copyright &copy; 2025 Hantang
 
 # Repository
-repo_name: cntextbook
-repo_url: https://github.com/hantang/cntextbook/
+repo_name: yuwen
+repo_url: https://github.com/hantang/yuwen/
 # edit_uri: tree/main
 
 theme:
@@ -64,6 +64,7 @@ plugins:
         - zh
       separator: '[\s\-,:!=\[\]()"/\u200b]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
   - meta
+  - table-reader
   - mkdocs-embed-pdf
   - callouts
   - minify:
@@ -132,5 +133,14 @@ nav:
               - 课程标准/普通高中/附录/index.md
               - 课程标准/普通高中/附录/古诗文背诵推荐篇目.md
               - 课程标准/普通高中/附录/关于课内外读物的建议.md
-    - "🔗 中小学生阅读指导目录": https://fantribe.github.io/books/edu/
-    - "🔗 中小学优秀古诗文篇目": https://fantribe.github.io/books/edu/classic/
+    - 优秀古诗文:
+      - 优秀古诗文/index.md
+      - 优秀古诗文/extend.md
+      - 香港:
+        - 优秀古诗文/hk.md
+        - 优秀古诗文/hk-senior.md
+        - 优秀古诗文/hk-refer.md
+        - 优秀古诗文/hk-reciting.md
+      - 台湾:
+        - 优秀古诗文/tw.md
+        - 优秀古诗文/tw-textbook.md

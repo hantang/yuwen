@@ -2,3 +2,4 @@ ruamel.yaml>=0.18.15
 mkdocs-minify-plugin
 mkdocs-material
 mkdocs-callouts
+mkdocs-table-reader-plugin

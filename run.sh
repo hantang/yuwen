@@ -54,6 +54,7 @@ fi
 # 构建静态脚本
 if [[ "$STEP_BUILD" == true ]]; then
     mkdocs build
+    rm -rf site/**/*.{csv,tsv}
 fi
 
 echo "Done"
