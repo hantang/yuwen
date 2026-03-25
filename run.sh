@@ -39,6 +39,19 @@ cp config/mkdocs-template.yml mkdocs.yml
 # find docs -name "*.md" ! -name "index.md" -type f -delete
 # find docs -name "*.pdf"  -type f -delete
 
+# 重命名 删除前缀
+pushd $INPUT_PATH
+for dir in [0-9]*; do
+    if [[ -d "$dir" ]]; then
+        new_name=$(echo "$dir" | sed -r 's/^[0-9]+[a-z]-//')
+        if [[ -n "$new_name" ]] && [[ "$dir" != "$new_name" ]]; then
+            echo "rename $dir => $new_name"
+            mv "$dir" "$new_name"
+        fi
+    fi
+done
+popd
+
 # 生成文档和nav
 python src/process.py --input "$INPUT_PATH" --output "$DOCS_PATH"
 
@@ -51,7 +64,7 @@ if [[ "$STEP_DEP" == true ]]; then
     pip install .
 fi
 
-# 构建静态脚本
+# 构建静态页面
 if [[ "$STEP_BUILD" == true ]]; then
     mkdocs build
     rm -rf site/**/*.{csv,tsv}
