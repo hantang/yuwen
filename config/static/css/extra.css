@@ -10,15 +10,12 @@
 @import url("https://fontsapi.zeoseven.com/201/main/result.css");
 
 :root {
-  --md-text-font-family: "Mengshen-Regular", "Noto Serif SC", "Noto Serif", serif;
+  /* --md-text-font-family: serif; */
   /* --md-code-font: "monospace"; */
+  --title-font: "Mengshen-Regular", "Noto Serif SC", serif;
   --kai-font: "KaiTi", "STKaiti", "Kai", "gkai00mp", serif;
   --song-font: "SimSun", "STSong", "HeSimpl Serif VF", serif;
   --fang-font: "FangSong", "STFangsong", "Zhuque Fangsong (technical preview)", serif;
-}
-
-article > h1 {
-  text-align: center;
 }
 
 article object {
@@ -26,8 +23,18 @@ article object {
 }
 
 .heti {
-  font-family: var(--song-font), var(--md-text-font-family);
-  font-size: 0.8rem;
+  font-family: var(--song-font);
+  font-size: 1rem;
+}
+
+article > h1,
+.heti h1,
+.heti h2,
+.md-typeset h1,
+.md-typeset h2 {
+  text-align: center;
+  font-family: var(--title-font);
+  font-weight: bold;
 }
 
 .heti > div > p,
@@ -56,30 +63,19 @@ blockquote > p {
 }
 
 .heti details {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   margin: 2rem auto;
 }
 
+.heti details p {
+  text-indent: 1.7rem;
+}
+
 .md-typeset .tabbed-labels > label {
-  font-family: var(--fang-font), var(--md-text-font-family);
+  font-family: var(--fang-font);
   font-size: 0.8rem;
 }
 
-.md-typeset h1, .md-typeset h2 {
-  font-family: var(--md-text-font-family);
-  font-weight: bold;
-}
-
-.heti summary,
-.heti h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--md-text-font-family);
-  color: var(--md-default-fg-color--light);
-}
 
 .doc-meta {
   margin: 1rem auto;
