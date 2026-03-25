@@ -1,9 +1,20 @@
+/* gkai00mp 文鼎PL简中楷 */
+@import url("https://fontsapi.zeoseven.com/582/main/result.css");
+/* "Zhuque Fangsong (technical preview)"; 朱雀仿宋 */
+@import url("https://fontsapi.zeoseven.com/7/main/result.css");
+/* "HeSimpl Serif VF" 合简宋体 */
+@import url("https://fontsapi.zeoseven.com/485/main/result.css");
+/* "Clear Han Serif"; 屏显臻宋 */
+@import url("https://fontsapi.zeoseven.com/79/main/result.css");
+/* "Mengshen-Regular"; 萌神明朝体 */
+@import url("https://fontsapi.zeoseven.com/201/main/result.css");
+
 :root {
-  /* --md-text-font-family:  */
+  --md-text-font-family: "Mengshen-Regular", "Noto Serif SC", "Noto Serif", serif;
   /* --md-code-font: "monospace"; */
-  --kai-font: "STKaiti", "KaiTi", "Kai", "楷体";
-  --song-font: "SimSun", "STSong", "宋体", "Noto Serif SC";
-  --fang-font: "FangSong", "STFangsong", "仿宋";
+  --kai-font: "KaiTi", "STKaiti", "Kai", "gkai00mp", serif;
+  --song-font: "SimSun", "STSong", "HeSimpl Serif VF", serif;
+  --fang-font: "FangSong", "STFangsong", "Zhuque Fangsong (technical preview)", serif;
 }
 
 article > h1 {
